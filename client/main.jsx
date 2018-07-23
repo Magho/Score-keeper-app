@@ -10,20 +10,28 @@ import {Tracker} from 'meteor/tracker';
 import {Players} from "../imports/api/Players";
 
 let players;
-const render_players = function () {
+const render_players = () => {
     // each element of an array must have a key to able react to distinguish them
-    return players.map(function (player) {
-        return <p key={player._id}> {player.name} has {player.score} point(s)</p>
+    return players.map((player) => {
+        return (
+            <p key={player._id}>
+                {player.name} has {player.score} point(s)
+                <button onClick={() => {Players.update({_id : player._id}, {$inc : {score: 1}});}}>+1</button>
+                <button onClick={() => {Players.update({_id : player._id}, {$inc : {score: -1}});}}>-1</button>
+                <button onClick={() => {Players.remove({_id : player._id});}}>X</button>
+            </p>
+        )
     });
 };
 
-const handleSubmit = function (e){
+const handleSubmit = (e) => {
     // prevent full page refresh done with form submitting
     e.preventDefault();
     let playerName = e.target.playerName.value;
-    let playerScore = e.target.playerScore.value;
+    let playerScore = parseInt(e.target.playerScore.value);
     if (playerName) {
         e.target.playerName.value = ''; // clear input value
+        e.target.playerScore.value = ''; // clear input value
         Players.insert({
             name  :  playerName  ,
             score :  playerScore ,
@@ -32,13 +40,13 @@ const handleSubmit = function (e){
 
 };
 // all it do is waiting for dom to be rendered and then execute what is in it
-Meteor.startup(function () {
+Meteor.startup( () => {
 
     let title = "Score keeper app";
     let name = "Magho";
 
     // this track changes from the server side and update when a available
-    Tracker.autorun(function () {
+    Tracker.autorun( () => {
         players = Players.find().fetch();
         let jsx = (
             <div>
