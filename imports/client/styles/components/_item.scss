@@ -16,3 +16,20 @@
 .item__message--empty {
   color : #999999;
 }
+
+.item--position-1 {
+  background: $golden;
+  border-color: $golden-alt;
+}
+
+
+.item--position-2 {
+  background: $silver;
+  border-color: $silver-alt;
+}
+
+
+.item--position-3 {
+  background: $bronze;
+  border-color: $bronze-alt;
+}

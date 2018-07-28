@@ -1,5 +1,5 @@
 import React from "react";
-import {Players} from "../api/Players";
+import {Players, calculatePlayersPositions} from "../api/Players";
 import TitleBar  from "./TitleBar";
 import AddPlayer from "./AddPlayer";
 import PlayersList from "./PlayersList";
@@ -9,11 +9,12 @@ import { withTracker } from 'meteor/react-meteor-data';
 class App extends React.Component {
     render(){
         let title = "score keeper";
+        let positionPlayers = calculatePlayersPositions(this.props.players);
         return (
             <div>
                 <TitleBar title={title} subtitle={"created by Magho"}/>
                 <div className={"wrapper"}>
-                    <PlayersList players={this.props.players}/>
+                    <PlayersList players={positionPlayers}/>
                     <AddPlayer/>
                 </div>
             </div>
