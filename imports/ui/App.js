@@ -11,9 +11,11 @@ class App extends React.Component {
         let title = "score keeper";
         return (
             <div>
-                <TitleBar title={title} subtitle={"made by Magho"}/>
-                <PlayersList players={this.props.players}/>
-                <AddPlayer/>
+                <TitleBar title={title} subtitle={"created by Magho"}/>
+                <div className={"wrapper"}>
+                    <PlayersList players={this.props.players}/>
+                    <AddPlayer/>
+                </div>
             </div>
         );
     }

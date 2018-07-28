@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Player from "./Player";
-
+import FlipMove from "react-flip-move"
 
 export default class PlayersList extends React.Component {
 
@@ -13,13 +13,21 @@ export default class PlayersList extends React.Component {
             });
         }
         else {
-            return <p> -- please insert player to start -- </p>;
+            return (
+                <div className={"item"}>
+                    <p className={"item__message item__message--empty"}>  please insert player to start  </p>
+                </div>
+            );
         }
     };
 
     render(){
         return (
-            <div> {this.render_players()} </div>
+            <div>
+                <FlipMove maintainContainerHeight={true}>
+                {this.render_players()}
+                </FlipMove>
+            </div>
         );
     }
 }
