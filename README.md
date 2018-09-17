@@ -1,6 +1,4 @@
 # Score-keeper-app
-This contain a simple project allow users to vote on different topics using their accounts .
-# Score-keeper-app
 This contain a simple project allow users to vote on different players and sort players according to their votes.
 
 ## Screenshots
