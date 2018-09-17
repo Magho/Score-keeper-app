@@ -16,6 +16,11 @@ This contain a simple project allow users to vote on different players and sort 
 
 * [numeral](https://www.npmjs.com/package/numeral) - A javascript library for formatting and manipulating numbers.
 * [prop-types](https://www.npmjs.com/package/prop-types) - Runtime type checking for React props and similar objects.
+* [react-flip-move](https://github.com/joshwcomeau/react-flip-move) - This module was built to tackle the common but arduous problem of animating a list of items when the list's order changes.
+
+#### meteor packages
+* [react-meteor-data](https://github.com/meteor/react-packages/tree/devel/packages/react-meteor-data) -This package provides an integration between React and Tracker, Meteor's reactive data system.
+* [mongo](https://github.com/meteor/meteor/tree/devel/packages/mongo) - The mongo package is a full stack database driver that provides several paramount pieces of functionality to work with MongoDB in Meteor.
 
 ## Running
 
